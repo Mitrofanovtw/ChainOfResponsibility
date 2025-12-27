@@ -7,8 +7,8 @@
             var lengthValidator = new LengthValidator();
             var numericValidator = new NumericValidator();
             var rangeValidator = new RangeValidator(1, 100);
-
-            lengthValidator.SetNext(numericValidator).SetNext(rangeValidator);
+            var specialCharValidator = new SpecialCharacterValidation();
+            lengthValidator.SetNext(numericValidator).SetNext(rangeValidator).SetNext(specialCharValidator);
 
             Console.WriteLine("Введите данные для валидации:");
             string inputData = Console.ReadLine();
